@@ -72,6 +72,7 @@ header form {
     border-radius: 50%;
     margin-left: 2.4rem;
     margin-right: 2.4rem;
+    
 }
 
 .icon{
@@ -90,6 +91,8 @@ main h1{
 
 main .illustration {
     width: 100%;
+    --startY: 100%;
+    animation: appear .4s;
 }
 
 main .like {
@@ -103,6 +106,11 @@ main .texto {
 aside {
     grid-area: aside;
     background: var(--color-base-white);
+}
+
+aside img:hover {
+    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+    transform: scale(1.1) rotate(-2deg);
 }
 
 aside h1 {
@@ -145,6 +153,23 @@ footer p {
     padding: 1.6rem;
     font-size: 1.6rem;
     font-weight: 600;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 @media (min-width: 1200px)
@@ -215,5 +240,9 @@ footer p {
     aside {
         margin-top: 4rem;
         padding-left: 3.2rem;
+    }
+
+    aside img {
+        
     }
 }
